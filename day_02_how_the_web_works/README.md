@@ -1,4 +1,3 @@
-````markdown
 # How the Web Works
 
 ## Introduction
