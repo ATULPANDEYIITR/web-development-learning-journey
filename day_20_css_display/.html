@@ -1,0 +1,370 @@
+<!-- File: index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta
+        name="description"
+        content="Interactive CSS Display laboratory covering block, inline, inline-block, none, visibility, overflow, and positioning fundamentals."
+    >
+    <title>CSS Display Laboratory</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header class="site-header">
+        <div class="container header-content">
+            <a class="brand" href="#top">CSS Display Laboratory</a>
+            <nav class="main-nav" aria-label="Primary navigation">
+                <a href="#concepts">Concepts</a>
+                <a href="#playground">Playground</a>
+                <a href="#positioning">Positioning</a>
+                <a href="#reference">Reference</a>
+            </nav>
+        </div>
+    </header>
+
+    <main id="top">
+        <section class="hero">
+            <div class="container hero-content">
+                <p class="eyebrow">CSS FUNDAMENTALS</p>
+                <h1>Understand how elements occupy space.</h1>
+                <p class="hero-text">
+                    An interactive laboratory for learning CSS display behavior,
+                    visibility, overflow, and positioning through observable examples.
+                </p>
+                <a class="button" href="#playground">Open playground</a>
+            </div>
+        </section>
+
+        <section id="concepts" class="section">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="eyebrow">CORE CONCEPTS</p>
+                    <h2>Display and visibility</h2>
+                    <p>
+                        The <code>display</code>, <code>visibility</code>, and
+                        <code>overflow</code> properties answer different questions:
+                        how an element participates in layout, whether it is painted,
+                        and how content exceeding a box is handled.
+                    </p>
+                </div>
+
+                <div class="concept-grid">
+                    <article class="concept-card">
+                        <span class="concept-number">01</span>
+                        <h3>Block</h3>
+                        <p>
+                            A block-level box normally starts on a new line and can
+                            participate in width and height calculations.
+                        </p>
+                        <code>display: block;</code>
+                    </article>
+
+                    <article class="concept-card">
+                        <span class="concept-number">02</span>
+                        <h3>Inline</h3>
+                        <p>
+                            An inline box participates in the current line flow.
+                            Width and height do not behave like they do on a normal block.
+                        </p>
+                        <code>display: inline;</code>
+                    </article>
+
+                    <article class="concept-card">
+                        <span class="concept-number">03</span>
+                        <h3>Inline-block</h3>
+                        <p>
+                            An inline-block participates in line flow while behaving
+                            like a rectangular box for sizing.
+                        </p>
+                        <code>display: inline-block;</code>
+                    </article>
+
+                    <article class="concept-card">
+                        <span class="concept-number">04</span>
+                        <h3>None</h3>
+                        <p>
+                            The element is removed from the layout as if the element
+                            were not participating in the box tree for rendering.
+                        </p>
+                        <code>display: none;</code>
+                    </article>
+
+                    <article class="concept-card">
+                        <span class="concept-number">05</span>
+                        <h3>Visibility</h3>
+                        <p>
+                            <code>visibility: hidden</code> hides the element while
+                            preserving its layout space.
+                        </p>
+                        <code>visibility: hidden;</code>
+                    </article>
+
+                    <article class="concept-card">
+                        <span class="concept-number">06</span>
+                        <h3>Overflow</h3>
+                        <p>
+                            Overflow controls what happens when content does not fit
+                            inside the element's box.
+                        </p>
+                        <code>overflow: auto;</code>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section id="playground" class="section section-dark">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="eyebrow">INTERACTIVE LAB</p>
+                    <h2>Display playground</h2>
+                    <p>
+                        Change the display, visibility, overflow, position, width,
+                        and height values and observe the result immediately.
+                    </p>
+                </div>
+
+                <div class="playground">
+                    <aside class="controls" aria-label="CSS controls">
+                        <div class="control-group">
+                            <label for="display-select">display</label>
+                            <select id="display-select">
+                                <option value="block">block</option>
+                                <option value="inline">inline</option>
+                                <option value="inline-block">inline-block</option>
+                                <option value="none">none</option>
+                            </select>
+                        </div>
+
+                        <div class="control-group">
+                            <label for="visibility-select">visibility</label>
+                            <select id="visibility-select">
+                                <option value="visible">visible</option>
+                                <option value="hidden">hidden</option>
+                                <option value="collapse">collapse</option>
+                            </select>
+                        </div>
+
+                        <div class="control-group">
+                            <label for="overflow-select">overflow</label>
+                            <select id="overflow-select">
+                                <option value="visible">visible</option>
+                                <option value="hidden">hidden</option>
+                                <option value="clip">clip</option>
+                                <option value="auto">auto</option>
+                                <option value="scroll">scroll</option>
+                            </select>
+                        </div>
+
+                        <div class="control-group">
+                            <label for="position-select">position</label>
+                            <select id="position-select">
+                                <option value="static">static</option>
+                                <option value="relative">relative</option>
+                                <option value="absolute">absolute</option>
+                                <option value="fixed">fixed</option>
+                                <option value="sticky">sticky</option>
+                            </select>
+                        </div>
+
+                        <div class="control-group">
+                            <label for="width-range">
+                                width <output id="width-value">180px</output>
+                            </label>
+                            <input id="width-range" type="range" min="80" max="320" value="180">
+                        </div>
+
+                        <div class="control-group">
+                            <label for="height-range">
+                                height <output id="height-value">120px</output>
+                            </label>
+                            <input id="height-range" type="range" min="60" max="220" value="120">
+                        </div>
+
+                        <button id="reset-playground" class="button button-secondary" type="button">
+                            Reset
+                        </button>
+                    </aside>
+
+                    <div class="playground-stage">
+                        <div id="playground-container" class="demo-container">
+                            <div class="demo-item demo-item-before">Before</div>
+
+                            <div id="playground-target" class="demo-target">
+                                Target element
+                                <span class="demo-long-content">
+                                    This deliberately long content demonstrates how
+                                    overflow behaves when the available box is smaller
+                                    than its content.
+                                </span>
+                            </div>
+
+                            <div class="demo-item demo-item-after">After</div>
+                        </div>
+
+                        <div class="computed-panel">
+                            <h3>Current CSS</h3>
+                            <pre id="computed-output">display: block;
+visibility: visible;
+overflow: visible;
+position: static;
+width: 180px;
+height: 120px;</pre>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="positioning" class="section">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="eyebrow">POSITIONING</p>
+                    <h2>Five positioning modes</h2>
+                    <p>
+                        Positioning changes how an element is placed relative to normal
+                        flow, an ancestor, or the viewport.
+                    </p>
+                </div>
+
+                <div class="position-grid">
+                    <article class="position-card">
+                        <h3>static</h3>
+                        <p>
+                            The normal positioning mode. The element participates in
+                            ordinary document flow and offset properties do not reposition it.
+                        </p>
+                    </article>
+
+                    <article class="position-card">
+                        <h3>relative</h3>
+                        <p>
+                            The element remains in normal flow, but its visual position
+                            can be shifted with offsets such as <code>top</code> and
+                            <code>left</code>.
+                        </p>
+                    </article>
+
+                    <article class="position-card">
+                        <h3>absolute</h3>
+                        <p>
+                            The element is removed from normal flow and positioned
+                            relative to an appropriate positioned containing block.
+                        </p>
+                    </article>
+
+                    <article class="position-card">
+                        <h3>fixed</h3>
+                        <p>
+                            The element is taken out of normal flow and normally positioned
+                            relative to the viewport.
+                        </p>
+                    </article>
+
+                    <article class="position-card">
+                        <h3>sticky</h3>
+                        <p>
+                            The element behaves like a relatively positioned element until
+                            a scrolling threshold causes it to stick within its container.
+                        </p>
+                    </article>
+                </div>
+
+                <div class="position-demo">
+                    <div class="sticky-label">sticky demonstration</div>
+                    <div class="position-demo-content">
+                        <p>
+                            Scroll the page and observe the sticky label. Its behavior
+                            depends on its scrolling container and offset threshold.
+                        </p>
+                        <p>
+                            Positioning is separate from <code>display</code>. An element
+                            can be block, inline-block, flex, grid, or another display
+                            type while also having a positioning mode.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="reference" class="section section-light">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="eyebrow">REFERENCE</p>
+                    <h2>Behavior at a glance</h2>
+                </div>
+
+                <div class="table-wrapper">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Property</th>
+                                <th>Primary question</th>
+                                <th>Layout space preserved?</th>
+                                <th>Typical use</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><code>display: block</code></td>
+                                <td>How does the box participate in flow?</td>
+                                <td>Yes</td>
+                                <td>Sections, containers, paragraphs</td>
+                            </tr>
+                            <tr>
+                                <td><code>display: inline</code></td>
+                                <td>Should the box participate in line flow?</td>
+                                <td>Yes</td>
+                                <td>Text-level content</td>
+                            </tr>
+                            <tr>
+                                <td><code>display: inline-block</code></td>
+                                <td>Should it be inline but size like a box?</td>
+                                <td>Yes</td>
+                                <td>Buttons, badges, compact controls</td>
+                            </tr>
+                            <tr>
+                                <td><code>display: none</code></td>
+                                <td>Should it participate in rendering layout?</td>
+                                <td>No</td>
+                                <td>Conditional UI</td>
+                            </tr>
+                            <tr>
+                                <td><code>visibility: hidden</code></td>
+                                <td>Should the box be painted?</td>
+                                <td>Yes</td>
+                                <td>Hiding while retaining layout space</td>
+                            </tr>
+                            <tr>
+                                <td><code>overflow: auto</code></td>
+                                <td>What happens when content exceeds the box?</td>
+                                <td>Yes</td>
+                                <td>Scrollable panels</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="accessibility-note">
+                    <h3>Accessibility note</h3>
+                    <p>
+                        Visual hiding and semantic availability are different concerns.
+                        Choose a technique according to whether content should remain in
+                        layout, remain exposed to assistive technologies, or disappear
+                        from the rendered interface entirely.
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="site-footer">
+        <div class="container">
+            <p>CSS Display Laboratory · Educational reference implementation</p>
+        </div>
+    </footer>
+
+    <script type="module" src="js/app.js"></script>
+</body>
+</html>
