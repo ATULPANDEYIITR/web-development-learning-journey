@@ -1,0 +1,15 @@
+{
+  "// File": "package.json",
+  "name": "css-display-laboratory",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Interactive educational project covering CSS display, visibility, overflow, and positioning fundamentals.",
+  "type": "module",
+  "scripts": {
+    "test": "node --test tests/*.test.js",
+    "serve": "python -m http.server 8000"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
