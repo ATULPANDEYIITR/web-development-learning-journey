@@ -1,0 +1,40 @@
+# File: .github/workflows/ci.yml
+name: CSS Display Laboratory CI
+
+on:
+  push:
+    branches:
+      - main
+      - master
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Validate JavaScript syntax
+        run: node --check js/app.js
+
+      - name: Run JavaScript tests
+        run: npm test
+
+      - name: Validate required files
+        shell: bash
+        run: |
+          test -f index.html
+          test -f css/styles.css
+          test -f js/app.js
+          test -f tests/display-playground.test.js
+          test -f README.md
